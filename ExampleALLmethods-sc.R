@@ -2,7 +2,7 @@
 #PARNI, ASI, TGS, wTGS and (three implementations of) Gibbs sampling
 #here an example with n=500 so results are expected to be
 #very close to the virtually contaminated experiment
-#(file ExampleALLmethods-vc.R)
+#(file ExampleALLmethods-vc.R )
 
 rm(list=ls())
 
