@@ -1,5 +1,5 @@
 # Pointwise implementation of Adaptive Random Neighbourhood Informed Sampler (Parallel Tempering)
-PARNI <- function(alg_par, hyper_par){
+PARNI <- function(alg_par, hyper_par, pos.interesting.genes){
   
   # initialisation of alg_par
   N <- alg_par$N   # number of iterations
@@ -543,6 +543,14 @@ PARNI <- function(alg_par, hyper_par){
       
     }
     
+	#save, each 10 iterations, to a file the inclusion probabilities of interesting genes
+	if ((iter/10-trunc(iter/10))==0){
+		write(Bayes_fac[pos.interesting.genes]/Nl, 
+			file=paste(mypath,"/realData/SNP/niterInf/results/Trace.ip.PARNI-Chain", chain, ".txt", sep=""),
+			append=TRUE)
+	}		
+	
+	
     if (iter == Nb) {
       end.time1 <- Sys.time()
     }

@@ -44,6 +44,14 @@ resumen$time.step2<- system.time(
 		}
 	}
 	visited.models[[i]]<- which(current.model==1)
+	#save, each 10 iterations, to a file the inclusion probabilities of interesting genes
+	if ((i/10-trunc(i/10))==0){
+		write(incl.probRB[pos.interesting.genes]/i, 
+			file=paste(mypath,"/realData/SNP/niterInf/results/Trace.ip.GibbsVectorized-Chain", chain, ".txt", sep=""),
+			append=TRUE)
+	}		
+	
+	
 }
 )
 
