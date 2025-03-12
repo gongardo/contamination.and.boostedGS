@@ -544,8 +544,8 @@ PARNI <- function(alg_par, hyper_par, pos.interesting.genes){
     }
     
 	#save, each 10 iterations, to a file the inclusion probabilities of interesting genes
-	if ((iter/10-trunc(iter/10))==0){
-		write(Bayes_fac[pos.interesting.genes]/Nl, 
+	if ((iter/10-trunc(iter/10))==0 & iter>Nb){
+		write(estm_PIPs[pos.interesting.genes]/((iter-Nb)*n_chain), 
 			file=paste(mypath,"/realData/SNP/niterInf/results/Trace.ip.PARNI-Chain", chain, ".txt", sep=""),
 			append=TRUE)
 	}		

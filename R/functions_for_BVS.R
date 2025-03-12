@@ -103,6 +103,14 @@ TGS<-function(p,gamma_start=NULL,
 	visited.models[[t]]<- which(gamma==1)
 	#end of code added
 	
+	#save, each 10 iterations, to a file the inclusion probabilities of interesting genes
+	if ((t/10-trunc(t/10))==0 & t>burn_in){
+		write(est_inclusion_probs[pos.interesting.genes]/sum(sample_weights), 
+			file=paste(mypath,"/realData/SNP/niterInf/results/Trace.ip.TGS-Chain", chain, ".txt", sep=""),
+			append=TRUE)
+	}		
+	
+	
   }
   est_inclusion_probs<-est_inclusion_probs/sum(sample_weights)
   return(list(est_inclusion_probs=est_inclusion_probs,
@@ -179,6 +187,14 @@ wTGS<-function(p,gamma_start=NULL,
     #code added to save visited models
 	visited.models[[t]]<- which(gamma==1)
 	#end of code added
+	
+	#save, each 10 iterations, to a file the inclusion probabilities of interesting genes
+	if ((t/10-trunc(t/10))==0 & t>burn_in){
+		write(est_inclusion_probs[pos.interesting.genes]/sum(sample_weights), 
+			file=paste(mypath,"/realData/SNP/niterInf/results/Trace.ip.wTGS-Chain", chain, ".txt", sep=""),
+			append=TRUE)
+	}		
+	
 	
   }
   est_inclusion_probs<-est_inclusion_probs/sum(sample_weights)

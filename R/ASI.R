@@ -430,7 +430,14 @@ ASI <- function(alg_par, hyper_par){
     A <- zeta * til_A
     D <- zeta * til_D
     
+	#save, each 10 iterations, to a file the inclusion probabilities of interesting genes
+	if ((iter/10-trunc(iter/10))==0 & iter>Nb){
+		write(estm_PIPs[pos.interesting.genes]/((iter-Nb)*n_chain), 
+			file=paste(mypath,"/realData/SNP/niterInf/results/Trace.ip.ASI-Chain", chain, ".txt", sep=""),
+			append=TRUE)
+	}		
     
+	
     if (iter == Nb) {
       end.time1 <- Sys.time()
     }
