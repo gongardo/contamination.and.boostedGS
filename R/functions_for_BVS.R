@@ -46,7 +46,7 @@ GS<-function(p,gamma_start=NULL,
 
 TGS<-function(p,gamma_start=NULL,
               T,burn_in=0,
-              hyper_par=NULL,vars_selected=c(1,2)){
+              hyper_par=NULL,vars_selected=c(1,2), pos.interesting.genes=NULL){
   ## TGS algorithm for Bayesian variable selection problems
   
   #code added to allow for the fast implementation and the contaminated implementation
@@ -126,7 +126,7 @@ TGS<-function(p,gamma_start=NULL,
 
 wTGS<-function(p,gamma_start=NULL,
               T,burn_in=0,
-              hyper_par=NULL,vars_selected=c(1,2)){
+              hyper_par=NULL,vars_selected=c(1,2), pos.interesting.genes=NULL){
   ## wTGS algorithm for Bayesian variable selection problems
   
   #code added to allow for the fast implementation and the contaminated implementation

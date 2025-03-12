@@ -11,3 +11,6 @@ Since the virtually contaminated experiment "emulates" the simulated experiment,
 
 Acknowledgements:
 In several places we are using functions coming from the github repositories (accessed in 2023) [1] XitongLiang/The-PARNI-scheme and [2] gZanella/TGS that, accompany the papers Liang, Livingstone, Griffin (2021) and Zanella and Roberts (2018) respectively. In particular ASI.R and PARNI.R are essentially the files with the same names in [1]; other_supportive_functions.R is a light version of the file with the same name in [1]; make_hyper_par.R is a modified version of the file with the same name in [1] but adapted to include our contributions; functions_for_BVS.R is a modified version of the file with the same name in [2] adapted to make it possible computation of TGS and wTGS handling g-Zellner prior in a fast and more reliable way; bf_g_L_4GS.R is an adaptation of the file with the name bf_g_L.R in [1] to be run with the vectorized version of Gibbs Sampling. All the other functions are built from scratch. 
+
+# Branch: JCGSrev
+This branch was created to run the different algorithms and saving, each 10 iterations the inclusion probabilities of interesting genes. Should not be used for general purposes.

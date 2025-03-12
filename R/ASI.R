@@ -1,5 +1,5 @@
 # Adaptively Scaled Individual Adaptation (Parallel Tempering)
-ASI <- function(alg_par, hyper_par){
+ASI <- function(alg_par, hyper_par, pos.interesting.genes){
   
   # initialisation of alg_par
   N <- alg_par$N   # number of iterations
